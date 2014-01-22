@@ -7,3 +7,6 @@
 [submodule "bundle/vim-ansible-yaml"]
 	path = bundle/vim-ansible-yaml
 	url = git://github.com/chase/vim-ansible-yaml.git
+[submodule "bundle/vim-restructured-text"]
+	path = bundle/vim-restructured-text
+	url = https://github.com/Rykka/riv.vim
