@@ -13,3 +13,6 @@ autocmd BufWritePre *.go Fmt
 
 " \i --> import package under cursor
 au Filetype go nnoremap <buffer> <LocalLeader>i :exe 'Import ' . expand('<cword>')<CR>
+
+" Don't collapse folds
+let g:vim_markdown_initial_foldlevel=100
