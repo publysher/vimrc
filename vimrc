@@ -14,6 +14,9 @@ autocmd BufWritePre *.go Fmt
 " \i --> import package under cursor
 au Filetype go nnoremap <buffer> <LocalLeader>i :exe 'Import ' . expand('<cword>')<CR>
 
+" \t --> run all tests in the current workspace
+au Filetype go nnoremap <LocalLeader>gt :!clear; go test ./...<CR>
+
 " Set linebreak for markdown files
 au Filetype mkd set linebreak
 
