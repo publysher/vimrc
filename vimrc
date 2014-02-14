@@ -45,4 +45,4 @@ function! GoTest()
 endfunction	
 
 " \gt --> run all tests in the current workspace 
-au Filetype go nnoremap <LocalLeader>gt :call GoTest()<CR>
+au Filetype go nnoremap <LocalLeader>gt :w<CR>:call GoTest()<CR>
