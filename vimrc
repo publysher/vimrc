@@ -17,6 +17,9 @@ au Filetype go nnoremap <buffer> <LocalLeader>i :exe 'Import ' . expand('<cword>
 " Set linebreak for markdown files
 au Filetype mkd set linebreak
 
+" Set linebreak for reStructuredText files
+au Filetype rst set linebreak
+
 " Don't collapse folds
 let g:vim_markdown_initial_foldlevel=100
 
