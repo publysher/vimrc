@@ -29,6 +29,7 @@ au Filetype rst set linebreak
 
 " Set smaller tabstop for HTML
 au Filetype html set tabstop=2
+au Filetype html set shiftwidth=2
 
 
 "
@@ -37,3 +38,5 @@ au Filetype html set tabstop=2
 
 " \t --> run all tests in the current workspace 
 au Filetype go nmap <LocalLeader>t <Plug>(go-test)
+au Filetype go set tabstop=8
+au Filetype go set shiftwidth=8
