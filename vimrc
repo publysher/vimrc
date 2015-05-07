@@ -1,5 +1,11 @@
+" load Pathogen and ensure all help sections work
 execute pathogen#infect()
+Helptags
+
+" highlighting
 syntax on
+
+" auto-indent
 filetype plugin indent on
 
 " when was the last time you saw vim crash?
@@ -7,6 +13,10 @@ set noswapfile
 
 " why backups when you've got git
 set nobackup
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_compact = 1
 
 "
 " MARKDOWN
@@ -28,15 +38,24 @@ au Filetype rst set linebreak
 "
 
 " Set smaller tabstop for HTML
-au Filetype html set tabstop=2
-au Filetype html set shiftwidth=2
+au Filetype html call SetDefaultHTMLOptions()
 
+function! SetDefaultHTMLOptions()
+	setlocal tabstop=2 shiftwidth=2 expandtab
+endfunction
 
 "
 " GO
 "
+let g:go_auto_type_info = 1
 
-" \t --> run all tests in the current workspace 
-au Filetype go nmap <LocalLeader>t <Plug>(go-test)
-au Filetype go set tabstop=8
-au Filetype go set shiftwidth=8
+au Filetype go call SetDefaultGoOptions()
+
+function! SetDefaultGoOptions() 
+	setlocal tabstop=8 shiftwidth=8 
+
+	nmap <LocalLeader>t <Plug>(go-test)
+	nmap <LocalLeader>c <Plug>(go-coverage)
+
+	:call tagbar#autoopen(0)
+endfunction
